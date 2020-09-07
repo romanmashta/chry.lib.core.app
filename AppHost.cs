@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Autofac;
+using Cherry.Lib.Core.App.Discovery;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Core;
@@ -49,6 +50,7 @@ namespace Cherry.Lib.Core.App
         {
             Log.Information("Configure Container");
             builder.RegisterInstance(Log.Logger);
+            builder.RegisterType<RootResolver>().As<IRootResolver>().SingleInstance();
             
             var appBuilder = AppBuilder.Create(builder);
             _configureApp?.Invoke(appBuilder);
