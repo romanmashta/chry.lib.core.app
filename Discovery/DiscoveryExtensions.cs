@@ -8,6 +8,9 @@ namespace Cherry.Lib.Core.App.Discovery
             => builder.RegisterType<T>().As<IDiscoveryService>();
         
         public static void RegisterResolver<T>(this ContainerBuilder builder) where T : IResourceResolver
-            => builder.RegisterType<T>().As<IResourceResolver>();        
+            => builder.RegisterType<T>().As<IResourceResolver>();
+        
+        public static void RegisterViewFor<V,T>(this ContainerBuilder builder) where T : IResourceView
+            => builder.RegisterType<V>().As<IResourceView>();              
     }
 }
