@@ -8,6 +8,8 @@ namespace Cherry.Lib.Core.App
 {
     public class App
     {
+        public string ApplicationName { get; set; }
+        public string LogoUrl { get; set; }
         public List<AppModule> Modules { get; } = new List<AppModule>();
 
         public App(IEnumerable<AppModule> modules)
