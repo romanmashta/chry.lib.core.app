@@ -4,9 +4,9 @@ namespace Cherry.Lib.Core.App.Discovery
 {
     public interface IResource
     {
-        public string Icon { get; }
-        public string DisplayName { get; }
-        public string[] Keywords { get; }
+        public string Icon { get; set; }
+        public string DisplayName { get; set; }
+        public string[] Keywords { get; set; }
         
         public Type QueryView();
     }

@@ -12,5 +12,8 @@ namespace Cherry.Lib.Core.App.Discovery
         
         public static void RegisterViewFor<V,T>(this ContainerBuilder builder) where T : IResourceView
             => builder.RegisterType<V>().As<IResourceView>();              
+        
+        public static string GetRef(this object entity) 
+            => (entity as IObjectWithRef)?.Ref;            
     }
 }

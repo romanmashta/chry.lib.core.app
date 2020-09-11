@@ -9,7 +9,7 @@ namespace Cherry.Lib.Core.App.Discovery
     {
         Task<IResource> ResolveResource(string resourcePath);
     }
-
+    
     public interface IRootResolver : IResourceResolver
     {
         
