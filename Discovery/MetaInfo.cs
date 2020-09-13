@@ -20,6 +20,7 @@ namespace Cherry.Lib.Core.App.Discovery
         
         string Icon { get; set; }
         string Category { get; set; }
+        int? Badge { get; set; }
         PreferedView PreferedView { get; set; }
         Priority Priority { get; set; }
     }
@@ -31,5 +32,6 @@ namespace Cherry.Lib.Core.App.Discovery
         public string Category { get; set; }
         public PreferedView PreferedView { get; set; }
         public Priority Priority { get; set; }
+        public int? Badge { get; set; }
     }
 }
