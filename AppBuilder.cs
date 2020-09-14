@@ -14,6 +14,7 @@ namespace Cherry.Lib.Core.App
 
         private string _applicationName;
         private string _logoUrl;
+        private string _appHeaderUrl;
 
         public List<IModuleInfo> Modules { get; } = new List<IModuleInfo>();
 
@@ -46,7 +47,13 @@ namespace Cherry.Lib.Core.App
         {
             _logoUrl = logoImage;
             return this;
-        }           
+        }
+        
+        public AppBuilder WithAppHeader(string logoImage)
+        {
+            _appHeaderUrl = logoImage;
+            return this;
+        }                   
         
         public AppBuilder UseModule<T>() where T : IModuleInfo, new() => this.UseModule(new T());
 
@@ -62,7 +69,8 @@ namespace Cherry.Lib.Core.App
                 return new App(modules)
                 {
                     ApplicationName = _applicationName,
-                    LogoUrl = _logoUrl
+                    LogoUrl = _logoUrl,
+                    AppHeaderUrl=_appHeaderUrl
                 };
             }).As<App>().AsSelf().SingleInstance();            
         }

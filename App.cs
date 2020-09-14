@@ -11,6 +11,7 @@ namespace Cherry.Lib.Core.App
         public string ApplicationName { get; set; }
         public string LogoUrl { get; set; }
         public List<AppModule> Modules { get; } = new List<AppModule>();
+        public string AppHeaderUrl { get; set; }
 
         public App(IEnumerable<AppModule> modules)
         {
