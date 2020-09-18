@@ -11,7 +11,8 @@ namespace Cherry.Lib.Core.App.Discovery
     {
         Low = 0,
         Middle = 1,
-        High = 2
+        High = 2,
+        Top = 3
     }
     
     public interface IMetaInfo
@@ -23,6 +24,7 @@ namespace Cherry.Lib.Core.App.Discovery
         int? Badge { get; set; }
         PreferedView PreferedView { get; set; }
         Priority Priority { get; set; }
+        int? Order { get; set; }
     }
 
     public class MetaInfo : IMetaInfo
@@ -33,5 +35,6 @@ namespace Cherry.Lib.Core.App.Discovery
         public PreferedView PreferedView { get; set; }
         public Priority Priority { get; set; }
         public int? Badge { get; set; }
+        public int? Order { get; set; }
     }
 }

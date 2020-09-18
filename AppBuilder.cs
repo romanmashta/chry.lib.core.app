@@ -15,6 +15,7 @@ namespace Cherry.Lib.Core.App
         private string _applicationName;
         private string _logoUrl;
         private string _appHeaderUrl;
+        private string _appIcon;
 
         public List<IModuleInfo> Modules { get; } = new List<IModuleInfo>();
 
@@ -69,10 +70,17 @@ namespace Cherry.Lib.Core.App
                 return new App(modules)
                 {
                     ApplicationName = _applicationName,
+                    Icon = _appIcon,
                     LogoUrl = _logoUrl,
                     AppHeaderUrl=_appHeaderUrl
                 };
             }).As<App>().AsSelf().SingleInstance();            
+        }
+
+        public AppBuilder WithIcon(string icon)
+        {
+            _appIcon = icon;
+            return this;
         }
     }
 }
