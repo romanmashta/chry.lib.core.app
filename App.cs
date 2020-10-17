@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofac;
@@ -13,6 +14,10 @@ namespace Cherry.Lib.Core.App
         public List<AppModule> Modules { get; } = new List<AppModule>();
         public string AppHeaderUrl { get; set; }
         public string Icon { get; set; }
+        
+        public bool IsAuthenticated { get; set; }
+        
+        public EventHandler AuthStateChanged { get; set; }
 
         public App(IEnumerable<AppModule> modules)
         {
@@ -37,6 +42,18 @@ namespace Cherry.Lib.Core.App
             {
                 module.Stop();
             }
+        }
+
+        public void Login()
+        {
+            IsAuthenticated = true;
+            AuthStateChanged?.Invoke(this, EventArgs.Empty);
+        }
+        
+        public void LogOut()
+        {
+            IsAuthenticated = false;
+            AuthStateChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }
