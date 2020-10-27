@@ -5,12 +5,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="5.0.0" />
-      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+      <PackageReference Include="Autofac" Version="6.0.0" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.0.2" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
       <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.7" />
       <PackageReference Include="Serilog" Version="2.8.0" />
       <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\data\src\Cherry.Lib.Core.Data\Cherry.Lib.Core.Data.csproj" />
     </ItemGroup>
     
 </Project>

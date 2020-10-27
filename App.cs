@@ -14,8 +14,8 @@ namespace Cherry.Lib.Core.App
         public List<AppModule> Modules { get; } = new List<AppModule>();
         public string AppHeaderUrl { get; set; }
         public string Icon { get; set; }
-        
-        public bool IsAuthenticated { get; set; }
+
+        public bool IsAuthenticated { get; set; } = true;
         
         public EventHandler AuthStateChanged { get; set; }
 

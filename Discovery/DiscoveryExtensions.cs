@@ -1,4 +1,5 @@
 using Autofac;
+using Cherry.Lib.Core.Data.Models;
 
 namespace Cherry.Lib.Core.App.Discovery
 {
