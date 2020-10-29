@@ -4,6 +4,7 @@ using System.Linq;
 using Autofac;
 using Autofac.Core;
 using Cherry.Lib.Core.App.Extension;
+using Cherry.Lib.Core.Identity.Clients.Contracts;
 using Serilog;
 
 namespace Cherry.Lib.Core.App
@@ -67,7 +68,7 @@ namespace Cherry.Lib.Core.App
             {
                 var modules = context.Resolve<IEnumerable<AppModule>>();
                 Log.Information("Creating app with name {0} and logo {1}", _applicationName, _logoUrl);
-                return new App(modules)
+                return new App(modules, context.Resolve<IAuthenticationClientService>())
                 {
                     ApplicationName = _applicationName,
                     Icon = _appIcon,
