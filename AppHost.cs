@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Autofac;
 using Cherry.Lib.Core.App.Discovery;
+using Cherry.Lib.Core.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Core;
@@ -44,6 +45,8 @@ namespace Cherry.Lib.Core.App
             Log.Information("Configure Services");
             services.AddLogging(loggingBuilder =>
                 loggingBuilder.AddSerilog(dispose: true));
+            
+            services.AddJsonLocalization();
         }
         
         protected virtual void ConfigureContainer(ContainerBuilder builder)
