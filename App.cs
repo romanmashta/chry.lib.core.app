@@ -20,7 +20,8 @@ namespace Cherry.Lib.Core.App
         public string AppHeaderUrl { get; set; }
         public string Icon { get; set; }
 
-        public bool IsAuthenticated => _authenticationService.CurrentUser != null;
+        //public bool IsAuthenticated => _authenticationService.CurrentUser != null;
+        public bool IsAuthenticated => true;
         
         public EventHandler AuthStateChanged { get; set; }
 
