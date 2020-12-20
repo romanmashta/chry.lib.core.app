@@ -46,7 +46,7 @@ namespace Cherry.Lib.Core.App
             services.AddLogging(loggingBuilder =>
                 loggingBuilder.AddSerilog(dispose: true));
             
-            services.AddJsonLocalization();
+           //services.AddJsonLocalization();
         }
         
         protected virtual void ConfigureContainer(ContainerBuilder builder)
@@ -58,6 +58,8 @@ namespace Cherry.Lib.Core.App
             var appBuilder = AppBuilder.Create(builder);
             _configureApp?.Invoke(appBuilder);
             appBuilder.Configure();
+
+            builder.AddJsonLocalization();
         }
         
         public async Task Run(string[] args)
