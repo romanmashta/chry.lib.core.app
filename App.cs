@@ -20,9 +20,7 @@ namespace Cherry.Lib.Core.App
         public string AppHeaderUrl { get; set; }
         public string Icon { get; set; }
 
-        //public bool IsAuthenticated => _authenticationService.CurrentUser != null;
-        public bool IsAuthenticated { get; set; }
-        
+        public bool IsAuthenticated => _authenticationService.CurrentUser != null;
         public EventHandler AuthStateChanged { get; set; }
 
         public App(IEnumerable<AppModule> modules, IAuthenticationClientService authenticationService)
@@ -57,12 +55,6 @@ namespace Cherry.Lib.Core.App
             {
                 module.Stop();
             }
-        }
-
-        public void Login()
-        {
-            IsAuthenticated = true;
-            AuthStateChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }
